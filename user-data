@@ -82,11 +82,10 @@ autoinstall:
     # - curtin in-target --target /target chmod 744 /etc/finish-install-setup.sh
   user-data: # Commands here run during first boot (cannot be interactive)
     runcmd:
-      # Install the NVIDIA driver from the ppa we setup earlier
-      # - [apt-get, update]
-      # - [apt-get, dist-upgrade, --yes]
-      # - [apt, autoremove, --yes]
-      # - [apt, --yes, install, xorg, xserver-xorg, x11-xserver-utils, xinit, openbox]
+      - [apt-get, update]
+      - [apt-get, dist-upgrade, --yes]
+      - [apt, autoremove, --yes]
+      - [apt, --yes, install, xorg, xserver-xorg, x11-xserver-utils, xinit, openbox]
       - [mkdir, /etc/systemd/system/getty@.service.d]
       - [wget, "https://raw.githubusercontent.com/bbaker2ud/lunux_projects/main/override.conf"]
       - [mv, override.conf, /etc/systemd/system/getty@.service.d/override.conf]
@@ -94,5 +93,5 @@ autoinstall:
       - [wget, "https://raw.githubusercontent.com/bbaker2ud/lunux_projects/main/script.sh" ]
       - [chmod, +x, script.sh]
       - [mv, script.sh, /root/script.sh]
-      # - [bash, /root/script.sh]
+      - [bash, /root/script.sh]
   
