@@ -94,4 +94,3 @@ autoinstall:
       - [chmod, +x, script.sh]
       - [mv, script.sh, /root/script.sh]
       - [bash, /root/script.sh]
-  Enter data here.
