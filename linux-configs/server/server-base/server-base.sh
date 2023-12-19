@@ -1,6 +1,10 @@
 #!/bin/bash
 #### *****RUN AS ROOT***** ####
 
+if [[ "$EUID" -ne 0 ]]; then
+    echo "****THIS SCRIPT MUST BE RUN AS THE ROOT USER.****"
+    exit
+fi
 
 BASH_PROFILE="/root/.bash_profile"
 SERVER_BASE_PROFILE="./root/server-base.sh"
