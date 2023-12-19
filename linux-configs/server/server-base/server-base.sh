@@ -55,7 +55,7 @@ getCredentials()
     echo "username=${USERNAME}" > $CIFS_CREDS &&
     echo "password=${PASSWORD}" >> $CIFS_CREDS &&
     echo "domain=ADWS" >> $CIFS_CREDS &&
-    echo "iocharset=utf8" $CIFS_CREDS
+    echo "iocharset=utf8" >> $CIFS_CREDS
 }
 
 setHostname()
