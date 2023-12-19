@@ -137,4 +137,4 @@ echo "CPU "$(lscpu | grep 'Model name:') >> description &&
 echo ""$(grep MemTotal /proc/meminfo) >> description &&
 echo "Disk "$(parted -l | grep Model:) >> description &&
 echo "$(parted -l | grep 'Disk /dev/')" >> description &&
-echo -e "${USERS};\n${USERID};\n${PRIMARYUSE};\n${DEPTCHOICE};\n${BUILDING};\n${ROOM};\n${ASSET};\n$(cat description)" > guacd.info
+echo -e "${USERS};\n${USERID};\n${PRIMARYUSE};\n${DEPTCHOICE};\n${BUILDING};\n${ROOM};\n${ASSET};\n$(cat description)" > /root/GUACD/guacd.info
