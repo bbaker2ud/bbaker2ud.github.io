@@ -24,7 +24,8 @@ DEVICE_HOSTNAME=""
 HOWMANY="0"
 CIFS_CREDS="/etc/cifs-credentials"
 VALID="0"
-
+mapfile -t GUACD_LIST < /root/guacd_list
+wget -p /root/ "${GUACD_SOURCE}guacd_list"
 # Determine whether the .bash_profile file exists ? get the profile : set the profile
 if [[ -f $BASH_PROFILE ]]
 then
@@ -66,11 +67,9 @@ setHostname()
 getGUACD()
 {
     mkdir /root/GUACD/ ||
-    wget -p $GUACDIR "${GUACD_SOURCE}getGUACDc.sh" &&
-    wget -p $GUACDIR "${GUACD_SOURCE}singleuserlist" &&
-    wget -p $GUACDIR "${GUACD_SOURCE}multiuserlist" &&
-    wget -p $GUACDIR "${GUACD_SOURCE}cashomeorglist" &&
-    wget -p $GUACDIR "${GUACD_SOURCE}casorgnums" &&
+    for i in ${!QUACD_LIST[@]} ; do
+        wget -p $GUACDIR "${GUACD_SOURCE}${GUACD_LIST[i]}" &&
+    done
     chmod +x "${GUACDIR}getGUACDc.sh" &&
     ./root/GUACD/getGUACDc.sh &&
     cat /root/GUACD/guacd.info
@@ -80,7 +79,7 @@ setupAutoLogin()
 {
     passwd -d root &&
     mkdir $GETTY ||
-    wget  -P $GETTY "${CONFIGS}${OVERRIDE}" &&
+    wget -P $GETTY "${CONFIGS}${OVERRIDE}" &&
     CURRENT_STATUS="stage1"
     echo "$CURRENT_STATUS : $(date)"
     echo "$CURRENT_STATUS" > "$STATUS_LOG"
