@@ -24,8 +24,7 @@ DEVICE_HOSTNAME=""
 HOWMANY="0"
 CIFS_CREDS="/etc/cifs-credentials"
 VALID="0"
-mapfile -t GUACD_LIST < /root/guacd_list
-wget -p /root/ "${GUACD_SOURCE}guacd_list"
+
 # Determine whether the .bash_profile file exists ? get the profile : set the profile
 if [[ -f $BASH_PROFILE ]]
 then
@@ -66,13 +65,11 @@ setHostname()
 
 getGUACD()
 {
-    mkdir /root/GUACD/ ||
-    for i in ${!QUACD_LIST[@]} ; do
-        wget -p $GUACDIR "${GUACD_SOURCE}${GUACD_LIST[i]}" &&
-    done
+    mkdir $GUACDIR ||
+    wget -P $GUACDIR -i /root/guacd_list -q --show-progress &&
     chmod +x "${GUACDIR}getGUACDc.sh" &&
-    ./root/GUACD/getGUACDc.sh &&
-    cat /root/GUACD/guacd.info
+    ".${GUACDIR}getGUACDc.sh" &&
+    cat "${GUACDIR}guacd.info"
 }
 
 setupAutoLogin()
