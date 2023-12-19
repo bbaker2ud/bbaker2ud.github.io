@@ -8,8 +8,9 @@ STATUS_LOG="/root/status.log"
 GETTY="/etc/systemd/system/getty@tty1.service.d/"
 CONFIGS="http://bbaker2ud.gihub.io/configs/"
 SCRIPTS="http://bbaker2ud.gihub.io/scripts/"
-GUACD="http://bbaker2ud.github.io/GUACD/"
+GUACD_SOURCE="http://bbaker2ud.github.io/GUACD/"
 DIRECTORY="/root/scripts/"
+GUACDIR="/root/GUACD/"
 UPDATES="updates.sh"
 OVERRIDE="override.conf"
 AUTOSTART="/etc/xdg/openbox/autostart"
@@ -65,11 +66,12 @@ setHostname()
 getGUACD()
 {
     mkdir /root/GUACD/ ||
-    wget -p /root/GUACD/ "${GUACD}getGUACDc.sh" &&
-    wget -p /root/GUACD/ "${GUACD}singleuserlist" &&
-    wget -p /root/GUACD/ "${GUACD}multiuserlist" &&
-    wget -p /root/GUACD/ "${GUACD}cashomeorglist" &&
-    wget -p /root/GUACD/ "${GUACD}casorgnums" &&
+    wget -p $GUACDIR "${GUACD_SOURCE}getGUACDc.sh" &&
+    wget -p $GUACDIR "${GUACD_SOURCE}singleuserlist" &&
+    wget -p $GUACDIR "${GUACD_SOURCE}multiuserlist" &&
+    wget -p $GUACDIR "${GUACD_SOURCE}cashomeorglist" &&
+    wget -p $GUACDIR "${GUACD_SOURCE}casorgnums" &&
+    chmod +x "${GUACDIR}getGUACDc.sh" &&
     ./root/GUACD/getGUACDc.sh &&
     cat /root/GUACD/guacd.info
 }
