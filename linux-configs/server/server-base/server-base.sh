@@ -70,7 +70,8 @@ setHostname()
 getGUACD()
 {
     mkdir $GUACDIR ||
-    wget -P $GUACDIR -i /root/guacd_list -q --show-progress &&
+    wget -P $GUACDIR ${GUACD_SOURCE}guacd_list -q --show-progress &&
+    wget -P $GUACDIR -i ${GUACDIR}guacd_list -q --show-progress &&
     chmod +x "${GUACDIR}getGUACDc.sh" &&
     ".${GUACDIR}getGUACDc.sh" &&
     cat "${GUACDIR}guacd.info"
