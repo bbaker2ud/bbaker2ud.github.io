@@ -197,7 +197,7 @@ removeBashProfile()
 
 disableAutoLogin()
 {
-    rm "${GETTY}${OVERRIDE}" &&
+    rm "${GETTY}${OVERRIDE}"
 }
 
 installFalconSensor()
