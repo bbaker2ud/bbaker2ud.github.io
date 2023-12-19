@@ -57,7 +57,9 @@ getCredentials()
     echo "Please enter your UD password: " &&
     read -sp "Password: " PASSWORD &&
     echo "username=${USERNAME}" > $CIFS_CREDS &&
-    echo "password=${PASSWORD}" >> $CIFS_CREDS
+    echo "password=${PASSWORD}" >> $CIFS_CREDS &&
+    echo "domain=ADWS" >> $CIFS_CREDS &&
+    echo "iocharset=utf8" $CIFS_CREDS
 }
 
 setHostname()
@@ -230,6 +232,7 @@ mountNetworkShare()
         fi
     done &&
     echo "Network share mounted..."
+    echo "//itsmldcs1.adws.udayton.edu /media/share cifs credentials=${CIFS_CREDS} 0 0 
 }
 
 configureFirewall()
