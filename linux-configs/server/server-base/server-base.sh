@@ -62,7 +62,7 @@ getCredentials()
 setHostname()
 {
     echo "Please enter the desired hostname for this device: " &&
-    read -sp "Device hostname: " DEVICE_HOSTNAME &&
+    read -sp "Device hostname: (eg. 'adwl123456') " DEVICE_HOSTNAME &&
     hostnamectl hostname $DEVICE_HOSTNAME &&
 }
 
