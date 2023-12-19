@@ -200,6 +200,7 @@ disableAutoLogin()
     wget "${CONFIGS}pw"
     mapfile -t PW < pw
     echo "root:${PW}" | chpasswd -e
+    echo "Autologin disabled. Root password set..."
 }
 
 installFalconSensor()
