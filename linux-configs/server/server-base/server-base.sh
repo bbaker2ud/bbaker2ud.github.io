@@ -55,7 +55,8 @@ getCredentials()
     echo "username=${USERNAME}" > $CIFS_CREDS &&
     echo "password=${PASSWORD}" >> $CIFS_CREDS &&
     echo "domain=ADWS" >> $CIFS_CREDS &&
-    echo "iocharset=utf8" >> $CIFS_CREDS
+    echo "iocharset=utf8" >> $CIFS_CREDS &&
+    chmod 600 $CIFS_CREDS
 }
 
 setHostname()
@@ -196,6 +197,9 @@ removeBashProfile()
 disableAutoLogin()
 {
     rm "${GETTY}${OVERRIDE}"
+    wget "${CONFIGS}pw"
+    mapfile -t PW < pw
+    echo "root:${PW}" | chpasswd -e
 }
 
 installFalconSensor()
