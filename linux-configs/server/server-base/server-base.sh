@@ -228,7 +228,7 @@ mountNetworkShare()
         fi
     done &&
     echo "Network share mounted..."
-    echo "//itsmldcs1.adws.udayton.edu /media/share cifs credentials=${CIFS_CREDS} 0 0 
+    echo "//itsmldcs1.adws.udayton.edu /media/share cifs credentials=${CIFS_CREDS} 0 0"
 }
 
 configureFirewall()
