@@ -281,7 +281,7 @@ case "$CURRENT_STATUS" in
         #  installDisplayManagerComponents
         #  installVMwareHorizonClient
         #  reconfigureBashProfile
-        getGUACD
+        #  getGUACD
         mountNetworkShare
         installFalconSensor
         configureFirewall
