@@ -94,9 +94,11 @@ ufw allow 9595/udp &&
 echo "Done." &&
 echo "Installing Ivanti Agent..." &&
 /tmp/ems/nixconfig.sh -p -a itsmldcs1.adws.udayton.edu -i all -k ea67f4cd.0 &&
+echo "Downloading CAS Grub splash image..." &&
 wget https://bbaker2ud.github.io/configs/splash-cas.png -o /boot/grub/ &&
 wget https://bbaker2ud.github.io/configs/grub.default &&
 cat grub.default > /etc/default/grub &&
-update-grub
-echo "Done." 
+echo "Updating Grub..." &&
+update-grub &&
+echo "Done." &&
 reboot now
