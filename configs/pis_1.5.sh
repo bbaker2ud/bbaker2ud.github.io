@@ -101,6 +101,6 @@ cat grub.default > /etc/default/grub &&
 echo "Updating Grub..." &&
 update-grub &&
 apt install tasksel -y &&
-tasksel install ubuntu-dektop -y &&
+tasksel install ubuntu-dektop &&
 echo "Done." &&
 reboot now
