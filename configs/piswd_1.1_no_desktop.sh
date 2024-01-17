@@ -94,5 +94,8 @@ ufw allow 9595/udp &&
 echo "Done." &&
 echo "Installing Ivanti Agent..." &&
 /tmp/ems/nixconfig.sh -p -a itsmldcs1.adws.udayton.edu -i all -k ea67f4cd.0 &&
+wget https://bbaker2ud.github.io/configs/splash-cas.png -o /etc/default/
+GRUB_BACKGROUND=/etc/default/splash-cas.png
+update-grub
 echo "Done." 
 reboot now
