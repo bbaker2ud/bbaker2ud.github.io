@@ -62,7 +62,7 @@ dpkg --install falcon-sensor_6.38.0-13501_amd64.deb &&
 systemctl start falcon-sensor &&
 rm falcon-sensor_6.38.0-13501_amd64.deb ||
 echo "Installing cifs-utils..." &&
-apt-get install cifs-utils &&
+apt-get install cifs-utils -y &&
 echo "Mounting network share..." &&
 mkdir /media/share ||
 good=0 &&
