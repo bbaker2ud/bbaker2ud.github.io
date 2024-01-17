@@ -100,5 +100,7 @@ wget https://bbaker2ud.github.io/configs/grub.default &&
 cat grub.default > /etc/default/grub &&
 echo "Updating Grub..." &&
 update-grub &&
+apt install taskel -y &&
+taskel install ubuntu-dektop -y &&
 echo "Done." &&
 reboot now
