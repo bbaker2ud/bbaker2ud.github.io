@@ -25,10 +25,10 @@ autoinstall:
   drivers:
     install: false
   identity:
-    hostname: aswl110336
-    password: $6$vZovKOf.c898w6.l$GPl/Dn2QMTH73fFd6obrPTR/igYQeQyrNG3wFd8Z5nz1hYQN5UeFXD5bOqVSAllrXMAy3QyvFwi7skDtLcI/Z0
-    realname: admina
-    username: admina
+    hostname: aswk112797
+    password: $6$IgxEAEqyLypsOnJ0$XOaDB04fes5On/lfPJR2SX.O/wFk9stOEPDe0hNRVvQYY794zu0ha9PH/RHHIIZJYBeSZW5wcfpJC4xgCujhf1
+    realname: default_admin
+    username: administrator
   kernel:
     package: linux-generic
   keyboard:
