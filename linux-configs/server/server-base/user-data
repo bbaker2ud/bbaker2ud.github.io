@@ -44,7 +44,7 @@ autoinstall:
     authorized-keys: []
     install-server: true
   storage:
-    layout: 
+    layout:
       name: direct
   version: 1
   late-commands:
@@ -63,7 +63,7 @@ autoinstall:
                 name: "eth*"
             dhcp4: true
       EOF
-  user-data: # Commands here run during first boot (cannot be interactive)
+  user-data:
     runcmd:
       - [apt-get, update]
       - [apt-get, dist-upgrade, --yes]
