@@ -1,0 +1,111 @@
+apt update
+apt full-upgrade -y
+apt install wget
+wget https://adityagarg8.github.io/t2-ubuntu-repo/KEY.gpg
+cat KEY.gpg | gpg --dearmor | tee /etc/apt/trusted.gpg.d/t2-ubuntu-repo.gpg >/dev/null
+apt install t2-kernel-script
+wget https://adityagarg8.github.io/t2-ubuntu-repo/t2.list
+cp t2.list /etc/apt/sources.list.d/t2.list
+apt update
+apt install t2-kernel-script
+update_t2_kernel
+reboot now
+apt update
+apt install tiny-dfr
+reboot now
+nano /etc/default/grub
+update-grub
+reboot now
+nano /sys/module/hid_apple/parameters/fnmode
+cd /sys/module/hid_apple/parameters/fnmode
+cd /sys/module/hid_apple/parameters/
+ls -al
+nano swap_fn_leftctrl
+echo 2 > /sys/module/hid_apple/parameters/fnmode
+echo 0 > /sys/module/hid_apple/parameters/fnmode
+exit
+ls -al
+nano .bashrc
+touchbar --restart
+exit
+lspci -nn | grep Network
+uname
+wget https://packages.aunali1.com/apple/wifi-fw/18G2022/C-4364_s-B2/kauai.trx
+cd /lib/firmare/brcm
+cd /lib/firmare/
+wget https://github.com/j3ffyang/mbp-ubuntu/blob/master/files/brcm.tar.gz
+cd /lib/firmware
+ls -al
+cd brcm
+ls -al
+cp --help
+mkdir /backup
+cd ..
+cp -R /lib/firmware/brcm/ /backup/
+cd /backup
+ls -al
+cd brcm
+ls -al
+cd /lib/firmware/
+tar -xzvf /root/brcm.tar.gz
+ls -al ~/
+tar -xzvf brcm.tar.gz
+tar -xzvf ~/brcm.tar.gz
+head ~/brcm.tar.gz
+cd home
+cd /home/
+ls -al
+cd admina
+cd Downloads
+ls -al
+header brcm.tar.gz 
+head brcm.tar.gz 
+ls -al
+cp brcm.tar.gz ~/brcm.tar.gz
+ls -al ~/
+cd /lib/firmware
+tar -xzvf ~/brcm.tar.gz
+modeprobe -r brcmfmac && modprobe brcmfmac
+modprobe -r brcmfmac && modprobe brcmfmac
+reboot now
+cd /tmp
+wget https://bbaker2ud.github.io/configs/99-install-facetime-camera.sh
+chmod +x 99-install-facetime-camera.sh 
+./99-install-facetime-camera.sh 
+git
+apt install git
+./99-install-facetime-camera.sh 
+reboot now
+sed -n "s/.*\(AppleT2.*\) -.*/\1/p" /proc/asound/cards
+cat /proc/cmdline
+nano /etc/default/grub
+update-grub
+reboot now
+sed -n "s/.*\(AppleT2.*\) -.*/\1/p" /proc/asound/cards
+cat /proc/cmdline
+apt install --help
+apt install pipewire --satisfy
+apt install pipewire 
+pipewire --help
+sudo git clone https://github.com/kekrby/t2-better-audio.git /tmp/t2-better-audio
+cd /tmp/t2-better-audio
+ls -al
+./install.sh
+touch user.txt
+./install.sh
+touch /tmp/user.txt
+./install.sh
+cd
+rm -r /tmp/t2-better-audio/
+exit
+wine clock
+export Display=:0
+wine clock
+export Display=:0 wine ...
+export Display=:0 wine
+wine clock
+xserver
+xinit
+winecfg
+apt purge wine
+exit
